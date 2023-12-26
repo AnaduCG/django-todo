@@ -5,14 +5,20 @@
     <div class="card display-4 text-success border border-success px-2 fw-bold">Create task</div>
     <div class="card my-auto w-50">
         <legend class="card-body">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Task title</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Task info</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
+            <form class="row g-3" action="" method="post">
+                {% csrf_token %}
+                <div class="col-12">
+                    <label for="inputAddress" class="form-label">Title</label>
+                    {{form.title}}
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Task body</label>
+                    {{form.body}}
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
         </legend>
     </div>
 </div>
