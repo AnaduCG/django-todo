@@ -1,20 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+// import App from './App.jsx'
 import Home from './index.jsx'
 import './index.css'
+import ErrorPage from "./Error-page.jsx"
+import TaskForm from "./Create-task.jsx"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+const url  = "http://127.0.0.1:8000/api/todos/";
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <Home />
+    element: <Home Endpoint={url}/>,
+    errorElement: <ErrorPage/>,
   },
   {
-    path:"/anadu",
-    element: <div>Anadu Godwin</div>
+    path:"/create",
+    element: <TaskForm/>
   },
 ]);
 

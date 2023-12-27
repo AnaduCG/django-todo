@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import List from './List.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Home = () => {
+const Home = ({Endpoint}) => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [users, setUsers] = useState(false);
 
     useEffect(() => {
-        fetch("http://127.0.0.1:8000/api/todos/")
+        fetch(Endpoint)
             .then(res => res.json())
             .then(
                 (data) => {
