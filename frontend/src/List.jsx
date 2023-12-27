@@ -17,7 +17,6 @@ function List({ item }) {
                 <li key={todo.id} className='mb-2 cursor-pointer' onClick={() => toggleBody(todo.id)}>
                     <span
                         className='text-[green]'
-                        
                     >
                         Title:
                     </span>{' '}
