@@ -6,5 +6,9 @@ router = routers.DefaultRouter()
 router.register(r"todos", TodoView, "todo")
 
 urlpatterns = [
-    path("", include(router.urls)),
+    path(
+        "api/",
+        include(router.urls),
+        name="api",
+    )
 ]
